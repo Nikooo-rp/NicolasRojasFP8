@@ -15,10 +15,7 @@
             {
                 Console.WriteLine($"{nombre}, usted debe pagar impuestos.");
             }
-            else
-            {
-                Console.WriteLine($"{nombre}, usted no debe pagar impuestos.");
-            }
+
 
             /*Crea un algoritmo que lea la edad de un usuario, 
              * si el usuario es mayor de 18, se debe mostrar el 
@@ -34,6 +31,9 @@
             {
                 Console.WriteLine("Debes ser mayor de 18 años para entrar al sitio web");
             }
+
+            
+
         }
     }
 }
