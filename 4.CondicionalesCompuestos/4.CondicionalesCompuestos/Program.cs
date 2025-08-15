@@ -80,14 +80,16 @@ namespace _4.CondicionalesCompuestos
 
             if (noches > 3)
             {
-                costo = precio - precio * 17 / 100;
+                costo = precio * noches;
+                costo = costo - costo * 17 / 100; // Aplicar descuento del 17%
             }
-            else if (noches < 3)
+            else
             {
-                costo = precio - precio * 2 / 100;
+                costo = precio * noches;
+                costo = costo - costo * 2 / 100; // Aplicar descuento del 2%
             }
 
-            Console.WriteLine($"Debes pagar {costo * noches} por tu estadía");
+            Console.WriteLine($"Debes pagar {costo} por tu estadía");
         }
     }
 }
