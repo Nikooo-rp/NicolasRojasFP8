@@ -14,6 +14,7 @@
             Random rand = new Random();
             int num = rand.Next(1,100);
             int intento = 0;
+            int i = 0; // Extra: Para contar el número de intentos
 
             Console.WriteLine("He elegido un número entre 1 y 100, intenta adivinarlo");
 
@@ -25,14 +26,16 @@
                 if (intento > num)
                 {
                     Console.WriteLine("El número a adivinar es menor que eso");
+                    i++;
                 }
                 else if (intento < num)
                 {
                     Console.WriteLine("El número a adivinar es mayor que eso");
+                    i++;
                 }
                 else if (intento == num)
                 {
-                    Console.WriteLine("Felicidades, ¡adivinaste! El número era " + num);
+                    Console.WriteLine("Felicidades, ¡adivinaste! El número era " + num + ", adivinar te costó " + i + " intentos");
                 }
             }
         }
