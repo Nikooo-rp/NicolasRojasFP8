@@ -39,7 +39,7 @@
 
             // Ejercicio 3:
 
-            Random ran = new Random();
+            /*Random ran = new Random();
             int[] numsAleatorios = new int[20];
             int[] posiciones = new int[20];
             int numUsuario = 0, j = 0;
@@ -86,7 +86,42 @@
                 }
             }
             else
-                Console.WriteLine("\n" + -1);
+                Console.WriteLine("\n" + -1);*/
+
+            // Punto 4
+            Console.WriteLine("Ingresa el número de casillas del vector");
+            double n = Convert.ToDouble(Console.ReadLine());
+
+            while (n % 2 == 0)
+            {
+                Console.WriteLine("El número de casillas debe ser impar");
+                n = Convert.ToDouble(Console.ReadLine());
+            }
+
+            int[] ints = new int[Convert.ToInt32(n)];
+            Console.WriteLine("Ingresa un número para poner en la mitad del arreglo");
+            int m = Convert.ToInt32(Console.ReadLine());
+            int medio = Convert.ToInt32(Math.Ceiling(n / 2));
+            ints[medio] = m;
+
+            int k = 1;
+            for (int i = medio - 1; i >= 0; i--)
+            {
+                ints[i] = m - k;
+                k++;
+            }
+
+            k = 1;
+            for (int i = medio + 1; i < n; i++)
+            {
+                ints[i] = m + k;
+                k++;
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"{ints[i]} | ");
+            }
         }
     }
 }
