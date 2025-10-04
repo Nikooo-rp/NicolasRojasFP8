@@ -5,16 +5,16 @@
         static void Main(string[] args)
         {
             // Ejercicio 1:
-            /*int[] numeros = new int[15];
+            int[] numeros = new int[15];
 
-            for(int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros.Length; i++)
             {
                 Console.WriteLine($"Ingrese el número entero para la posición {i + 1}");
                 numeros[i] = Convert.ToInt32(Console.ReadLine());
             }
 
             Console.Clear();
-            for (int i = 0; i < numeros.Length ; i++)
+            for (int i = 0; i < numeros.Length; i++)
             {
                 Console.Write(numeros[i] + ", ");
             }
@@ -35,11 +35,11 @@
             for (int i = caracteres.Length - 1; i >= 0; i--)
             {
                 Console.Write(caracteres[i] + ", ");
-            }*/
+            }
 
             // Ejercicio 3:
 
-            /*Random ran = new Random();
+            Random ran = new Random();
             int[] numsAleatorios = new int[20];
             int[] posiciones = new int[20];
             int numUsuario = 0, j = 0;
@@ -47,7 +47,7 @@
 
             for (int i = 0; i < numsAleatorios.Length; i++)
             {
-                numsAleatorios[i] = ran.Next(0,50);
+                numsAleatorios[i] = ran.Next(0, 50);
             }
 
             Console.WriteLine("Ingrese un número entre 1 y 50 para buscarlo en el vector");
@@ -86,7 +86,7 @@
                 }
             }
             else
-                Console.WriteLine("\n" + -1);*/
+                Console.WriteLine("\n" + -1);
 
             // Punto 4
             Console.WriteLine("Ingresa el número de casillas del vector");
@@ -122,6 +122,53 @@
             {
                 Console.Write($"{ints[i]} | ");
             }
+
+            // Punto 5
+            Random ran0aRango = new Random();
+
+            Console.WriteLine("Ingresa el rango para el vector 1");
+            int rango = Convert.ToInt32(Console.ReadLine());
+            int[] vector1 = new int[rango];
+            Console.WriteLine("Ingresa el rango para el vector 2");
+            int rango2 = Convert.ToInt32(Console.ReadLine());
+            int[] vector2 = new int[rango2];
+
+            for (int i = 0; i < vector1.Length; i++)
+            {
+                vector1[i] = ran0aRango.Next(0, rango + 1);
+            }
+            for (int i = 0; i < vector2.Length; i++)
+            {
+                vector2[i] = ran0aRango.Next(0, rango2 * 2);
+            }
+
+            int[] vectorUnificado = new int[rango + rango2];
+            
+            for (int i = 0; i < vectorUnificado.Length; i++)
+            {
+                if (i < vector1.Length)
+                    vectorUnificado[i] = vector1[i];
+                else if (i - rango < vector2.Length)
+                    vectorUnificado[i] = vector2[i - rango];
+            }
+
+            for (int i = 0; i < vector1.Length; i++)
+            {
+                Console.Write($"{vector1[i]} | ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < vector2.Length; i++)
+            {
+                Console.Write($"{vector2[i]} | ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i <vectorUnificado.Length; i++)
+            {
+                Console.Write($"{vectorUnificado[i]} | ");
+            }
+            Console.WriteLine();
         }
     }
 }
