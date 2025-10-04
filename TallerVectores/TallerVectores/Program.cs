@@ -122,6 +122,7 @@
             {
                 Console.Write($"{ints[i]} | ");
             }
+            Console.WriteLine();
 
             // Punto 5
             Random ran0aRango = new Random();
